@@ -1,0 +1,18 @@
+0x7c00~0x7e00	boot.bin	512byte 1sector
+0x70000~0x71000	load.bin	1kb 8sector	
+0x71000~0x90000	kernel.bin	124kb (250)248sector	
+
+0x1000~0x2000 1 page dir table  4kb 
+0x2000~0x3000 2 page table kernel  4kb 
+0x3000~0x4000 2 page table vram  4kb 
+
+0x00090000 idt  0x000007ff
+0x00090800 Gdt  0x00000fff	目前的gdt只有6*8byte
+
+
+0x8000~0xc000	phy mem bitmap	0x4000byte	 512MB
+0xc000~0xf000	vir mem bitmap	0x4000byte	 512MB
+
+After page mode
+0x80001000	vir kernel
+0x8009fc00	vir kernel esp
